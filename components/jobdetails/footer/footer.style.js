@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   applyBtn: {
     flex: 1,
-    backgroundColor: "#FE7654",
+    backgroundColor: "#3DB368",
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
