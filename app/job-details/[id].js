@@ -18,9 +18,7 @@ import {
   Specifics,
 } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
-// import useFetch from "../../hooks/useFetch";
-
-import data from "./tempDetailsData";
+import useFetch from "../../hooks/useFetch";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -29,13 +27,15 @@ const JobDetails = () => {
   const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
-  const isLoading = false;
-  const error = null;
-  // const { data, isLoading, error, refetch } = useFetch('job-details', {
-  //   job_id: params.id
-  // })
+  const { data, isLoading, error, refetch } = useFetch("job-details", {
+    job_id: params.id,
+  });
 
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, []);
 
   const displayTabContent = () => {
     switch (activeTab) {
