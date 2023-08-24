@@ -21,7 +21,7 @@ const Welcome = () => {
         <Text style={styles.userName}>Hello world</Text>
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
       </View>
-      <View styles={styles.searchContainer}>
+      <View style={styles.searchContainer}>
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
@@ -31,6 +31,14 @@ const Welcome = () => {
             placeholderTextColor={"lightgray"}
           />
         </View>
+
+        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+          <Image
+            source={icons.search}
+            resizeMode="contain"
+            style={styles.searchBtnImage}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
