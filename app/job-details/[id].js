@@ -29,14 +29,32 @@ const JobDetails = () => {
   const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
-
-  const onRefresh = () => {};
-
   const isLoading = false;
   const error = null;
   // const { data, isLoading, error, refetch } = useFetch('job-details', {
   //   job_id: params.id
   // })
+
+  const onRefresh = () => {};
+
+  const displayTabContent = () => {
+    switch (activeTab) {
+      case "Qualifications":
+        return (
+          <Specifics
+            title="Qualifications"
+            points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+          />
+        );
+
+      case "About":
+
+      case "Responsibilities":
+
+      default:
+        break;
+    }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -84,6 +102,7 @@ const JobDetails = () => {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               />
+              {displayTabContent()}
             </View>
           )}
         </ScrollView>
