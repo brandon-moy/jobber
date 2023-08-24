@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from "react-native";
-import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
+import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 
 import {
@@ -25,7 +25,7 @@ import data from "./tempDetailsData";
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
-  const params = useGlobalSearchParams();
+  const params = useLocalSearchParams();
   const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
