@@ -6,16 +6,12 @@ import styles from "./nearbyjobs.style";
 import { COLORS } from "../../../constants";
 import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 
-import data from "../popular/tempData";
-
 const Nearbyjobs = () => {
   const router = useRouter();
-  const isLoading = false;
-  const error = null;
-  // const { data, isLoading, error } = useFetch("search", {
-  //   query: "React developer",
-  //   num_pages: 1,
-  // });
+  const { data, isLoading, error } = useFetch("search", {
+    query: "React Native developer",
+    num_pages: 1,
+  });
 
   return (
     <View style={styles.container}>
