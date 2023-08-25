@@ -9,7 +9,7 @@ import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 const Nearbyjobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch("search", {
-    query: "React Native developer",
+    query: "Web Developer in Irvine, CA",
     num_pages: 1,
   });
 
