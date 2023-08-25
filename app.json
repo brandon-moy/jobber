@@ -8,6 +8,17 @@
       "expo-router"
     ],
     "name": "react-native-jobs",
-    "slug": "react-native-jobs"
+    "slug": "react-native-jobs",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a4f350b9-3a60-491e-9128-c7d4fbbac815"
+      }
+    },
+    "android": {
+      "package": "brandonmoy.jobber"
+    }
   }
 }
