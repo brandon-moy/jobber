@@ -54,7 +54,7 @@ Things you will need:
 1. Clone the repository
 
 ```
-git clone https://github.com/brandon-moy/react-native-jobs.git
+git clone https://github.com/brandon-moy/jobber.git
 ```
 
 2. Install dependencies with Node Package Manager
@@ -78,7 +78,20 @@ cp .env.example .env
 RAPID_API_KEY=changeMe <-- replace changeMe with RAPID API Key
 ```
 
-6. Start the project with the script:
+6. Go into the app.json file and delete the extra property. Because this projectId is specific to the user, you would not be able to access the project on Expo Go without being a part of the organization so we will have it generate a new projectId for you!
+
+```
+"extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a4f350b9-3a60-491e-9128-c7d4fbbac815"
+      }
+    },
+```
+
+7. Start the project with the script:
 
 ```
 npm run start
